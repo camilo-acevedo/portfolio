@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ThemeToggle } from './ThemeToggle';
 import { cn } from '@/lib/cn';
@@ -88,11 +88,16 @@ export function Header() {
         )}
       </AnimatePresence>
 
+      <MobileMenuTrigger
+        menuOpen={menuOpen}
+        onToggle={() => setMenuOpen((v) => !v)}
+      />
+
       <motion.aside
         initial={{ opacity: 0, x: 24 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7, delay: 0.2, ease: SOFT_EASE }}
-        className="fixed right-0 top-0 z-[70] flex h-[100dvh] w-11 flex-col md:w-12"
+        className="fixed right-0 top-0 z-[70] hidden h-[100dvh] w-12 flex-col md:flex"
         aria-label="Primary navigation"
       >
         <div
@@ -195,6 +200,61 @@ export function Header() {
   );
 }
 
+interface MobileMenuTriggerProps {
+  menuOpen: boolean;
+  onToggle: () => void;
+}
+
+function MobileMenuTrigger({ menuOpen, onToggle }: MobileMenuTriggerProps) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2, ease: SOFT_EASE }}
+      className="fixed right-3 top-3 z-[80] flex items-center md:hidden"
+    >
+      <button
+        onClick={onToggle}
+        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={menuOpen}
+        className={cn(
+          'group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full',
+          'border border-border/60 bg-bg-elevated/80 backdrop-blur',
+          'text-fg transition-colors duration-300 active:scale-95',
+        )}
+      >
+        <AnimatePresence mode="wait" initial={false}>
+          {menuOpen ? (
+            <motion.span
+              key="close"
+              initial={{ opacity: 0, rotate: -45, scale: 0.7 }}
+              animate={{ opacity: 1, rotate: 0, scale: 1 }}
+              exit={{ opacity: 0, rotate: 45, scale: 0.7 }}
+              transition={{ duration: 0.25, ease: SOFT_EASE }}
+              className="relative flex h-3.5 w-3.5 items-center justify-center text-accent"
+            >
+              <span className="absolute inline-block h-px w-3.5 rotate-45 bg-current" />
+              <span className="absolute inline-block h-px w-3.5 -rotate-45 bg-current" />
+            </motion.span>
+          ) : (
+            <motion.span
+              key="menu"
+              initial={{ opacity: 0, scale: 0.7 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.7 }}
+              transition={{ duration: 0.25, ease: SOFT_EASE }}
+              className="relative flex h-2.5 w-4 flex-col items-end justify-between"
+            >
+              <span aria-hidden className="block h-px w-full bg-current" />
+              <span aria-hidden className="block h-px w-[60%] bg-current" />
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </button>
+    </motion.div>
+  );
+}
+
 function VerticalLabel({ text }: { text: string }) {
   return (
     <span className="flex flex-col items-center gap-[5px] font-mono text-[10px] font-medium uppercase tracking-[0.25em] transition-colors duration-500">
@@ -250,19 +310,26 @@ interface FullscreenMenuProps {
 }
 
 function FullscreenMenu({ onClose, activeSection, t }: FullscreenMenuProps) {
+  const origin = useMemo(() => {
+    if (typeof window === 'undefined') return 'calc(100% - 28px) 50%';
+    return window.matchMedia('(min-width: 768px)').matches
+      ? 'calc(100% - 28px) 50%'
+      : 'calc(100% - 28px) 28px';
+  }, []);
+
   return (
     <motion.div
       key="menu-overlay"
-      initial={{ clipPath: 'circle(0% at calc(100% - 28px) 50%)' }}
+      initial={{ clipPath: `circle(0% at ${origin})` }}
       animate={{
-        clipPath: 'circle(160% at calc(100% - 28px) 50%)',
+        clipPath: `circle(160% at ${origin})`,
         transition: { duration: 0.75, ease: DRAMATIC_EASE },
       }}
       exit={{
-        clipPath: 'circle(0% at calc(100% - 28px) 50%)',
+        clipPath: `circle(0% at ${origin})`,
         transition: { duration: 0.65, delay: 0.3, ease: DRAMATIC_EASE },
       }}
-      className="fixed inset-0 z-[60] pr-12 md:pr-14"
+      className="fixed inset-0 z-[60] md:pr-14"
       style={{ willChange: 'clip-path' }}
     >
       <div aria-hidden className="absolute inset-0 bg-bg" />
@@ -404,6 +471,7 @@ function FullscreenMenu({ onClose, activeSection, t }: FullscreenMenuProps) {
         >
           <div className="flex items-center gap-2">
             <ThemeToggle />
+            <MenuLangToggle />
             <SocialIcon
               href="https://github.com/camilo-acevedo"
               label="GitHub"
@@ -441,6 +509,37 @@ function FullscreenMenu({ onClose, activeSection, t }: FullscreenMenuProps) {
         </motion.footer>
       </div>
     </motion.div>
+  );
+}
+
+function MenuLangToggle() {
+  const { i18n } = useTranslation();
+  const current = (i18n.resolvedLanguage ?? 'en').startsWith('es') ? 'ES' : 'EN';
+  const next = current === 'EN' ? 'es' : 'en';
+
+  return (
+    <button
+      onClick={() => void i18n.changeLanguage(next)}
+      className={cn(
+        'flex h-9 w-9 items-center justify-center rounded-full md:hidden',
+        'border border-border/60 bg-bg-elevated/50',
+        'font-mono text-[11px] font-medium tracking-[0.1em] text-fg-muted',
+        'transition-colors hover:border-accent/50 hover:text-fg',
+      )}
+      aria-label={`Switch language to ${next.toUpperCase()}`}
+    >
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={current}
+          initial={{ opacity: 0, y: 4 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -4 }}
+          transition={{ duration: 0.2, ease: SOFT_EASE }}
+        >
+          {current}
+        </motion.span>
+      </AnimatePresence>
+    </button>
   );
 }
 

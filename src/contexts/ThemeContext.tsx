@@ -43,8 +43,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     const next = theme === 'dark' ? 'light' : 'dark';
     const doc = document as Document & ViewTransitionSupport;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
 
-    if (!doc.startViewTransition || reduced) {
+    if (!doc.startViewTransition || reduced || isMobile) {
       setThemeState(next);
       return;
     }

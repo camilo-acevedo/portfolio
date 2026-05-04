@@ -65,7 +65,7 @@ export default function App() {
         <div className="relative z-[2]">
           <Header />
           <LangReveal>
-            <main className="pr-11 md:pr-12">
+            <main className="md:pr-12">
               <Hero />
               <About />
               <Services />
@@ -75,7 +75,7 @@ export default function App() {
               <Education />
               <Contact />
             </main>
-            <div className="pr-11 md:pr-12">
+            <div className="md:pr-12">
               <Footer />
             </div>
           </LangReveal>
