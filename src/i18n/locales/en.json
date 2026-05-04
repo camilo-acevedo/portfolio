@@ -1,0 +1,594 @@
+{
+  "meta": {
+    "title": "Camilo Acevedo — ML Engineer & Data Scientist",
+    "description": "Mid Level Data Scientist & Machine Learning Engineer. I design, train and deploy ML systems that ship to production. Available for freelance."
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "stack": "Stack",
+    "experience": "Experience",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact",
+    "hire": "Hire me",
+    "downloadCV": "Download CV",
+    "availability": "available · Q2 2026",
+    "commandHint": "press ⌘K",
+    "mobileMenuOpen": "menu",
+    "mobileMenuClose": "close",
+    "submenus": {
+      "services": {
+        "heading": "4 services · pick a fit",
+        "items": {
+          "ml-dev": { "label": "ML Model Dev", "hint": "Training + deployment" },
+          "mlops": { "label": "MLOps", "hint": "CI/CD + monitoring" },
+          "data-eng": { "label": "Data Pipelines", "hint": "ETL + quality" },
+          "ai-consulting": { "label": "AI Consulting", "hint": "Audit + roadmap" }
+        }
+      },
+      "projects": {
+        "heading": "4 case studies · shipped",
+        "items": {
+          "mlops-framework": { "label": "MLOps Framework", "hint": "Standardizing the ML lifecycle" },
+          "mlops-standards": { "label": "MLOps Standards", "hint": "Governance that scales" },
+          "time-series": { "label": "Time Series System", "hint": "Forecasting that listens" },
+          "scoring-platform": { "label": "Scoring Platform", "hint": "100K+ daily decisions" }
+        }
+      }
+    }
+  },
+  "commandPalette": {
+    "placeholder": "Type a command or search…",
+    "sections": "Sections",
+    "actions": "Actions",
+    "theme": "Toggle theme",
+    "language": "Switch language",
+    "empty": "No results"
+  },
+  "hero": {
+    "status": "Available for freelance — Q2 2026",
+    "eyebrow": "Mid Level Data Scientist & ML Engineer",
+    "titleLines": ["I build", "ML systems", "that ship."],
+    "subtitle": "End-to-end Machine Learning for production: from data pipelines and deep learning models to MLOps on Azure & AWS. I turn messy data into measurable business outcomes.",
+    "ctaPrimary": "Start a project",
+    "ctaSecondary": "Download CV",
+    "stats": [
+      { "value": "3+", "label": "Years shipping ML" },
+      { "value": "2M+", "label": "Users impacted" },
+      { "value": "50+", "label": "Models deployed" },
+      { "value": "40%", "label": "Faster dev cycle" }
+    ]
+  },
+  "about": {
+    "label": "// about",
+    "title": "Not a bio.",
+    "titleAccent": "An interface.",
+    "lead": "Skip the static paragraph. Query the model instead — ask what you actually need to know.",
+    "chat": {
+      "modelName": "camilo-v3.0",
+      "arch": "ds + mle · hybrid",
+      "status": "online",
+      "context": "128k ctx",
+      "greeting": "Hey. I'm the model card for Camilo's work and experience. Pick a prompt below to query me — or drop a message in the contact section to start a real conversation.",
+      "resetLabel": "reset conversation",
+      "inputPlaceholder": "$ all prompts consumed — use /contact below or email me",
+      "prompts": [
+        {
+          "id": "who",
+          "label": "/who",
+          "question": "who are you?",
+          "response": "I'm Camilo — Mid Level Data Scientist & ML Engineer based in Bogotá, Colombia. For the past 3+ years I've been designing and shipping production ML systems at GlobalHitss for one of Latin America's largest telcos, where I own models that touch millions of users end-to-end. I'm finishing my M.Sc. in Applied Mathematics & Computer Science (AI track) at Universidad del Rosario, on top of a Bachelor's in Business Administration from UNIMINUTO — a combination that keeps me close to both the math and the way decisions actually get made. Short version: I turn messy data into systems that move business metrics."
+        },
+        {
+          "id": "origin",
+          "label": "/origin",
+          "question": "how did you get into this?",
+          "response": "Through problems, not theory. I kept running into the same thing — processes that took hours and should have taken minutes, decisions made on gut feel when the data was sitting right there, teams drowning in dashboards nobody trusted. ML was the tool that actually fixed that: it turned rigorous work on data into systems that act on the insight, at scale. Years later, that's still what keeps me in the field — solving real problems with real data, and watching something measurable change because of it."
+        },
+        {
+          "id": "stack",
+          "label": "/stack",
+          "question": "what's your stack?",
+          "response": "Python is home base — TensorFlow, PyTorch and scikit-learn for modeling. On the ops side: MLflow for experiment tracking and model registry, Docker for portability, Azure DevOps and GitHub Actions for CI/CD. Data engineering happens in PySpark and Airflow. I work on Azure day-to-day, but swap to AWS or GCP when the project calls for it. The tools matter less than the discipline — reproducibility, observability, and pipelines that don't break at 3am."
+        },
+        {
+          "id": "ship",
+          "label": "/ship",
+          "question": "what have you shipped?",
+          "response": "A proprietary Python ML framework now used by 5+ internal teams — it cut dev time by 40% and standardized the path from notebook to production. Churn and propensity models impacting 2M+ users with a 15% AUC lift over the previous baseline. GANs generating synthetic data that grew training sets by 300% where real data was scarce or regulated. FastAPI inference services handling 50K+ requests a day with drift alerts and automated retraining. 10M+ records processed daily through the pipelines I own."
+        },
+        {
+          "id": "method",
+          "label": "/method",
+          "question": "how do you work?",
+          "response": "I build systems, not scripts. Every project gets versioning, monitoring, tests and documentation — the unglamorous 80% that separates a demo from a product. I work end-to-end because deployment is where most ML projects actually die: data drifts, APIs break, metrics stop matching. My guiding principle is simple: data is everything. Bad data makes brilliant models useless, so I spend as much time on the pipeline and the contracts around it as I do on the algorithm itself."
+        },
+        {
+          "id": "learning",
+          "label": "/learning",
+          "question": "what are you exploring now?",
+          "response": "Three fronts, all connected. LLMs — not the demos, the part where you make them reliable enough to trust in a production workflow. RAG systems — how to ground a model in real enterprise data without hallucinations leaking through. And data governance — lineage, quality contracts, and the compliance layer that everyone ignores until audit season. These are the areas where I see the biggest gap between what's hyped and what actually ships, and they feed directly into my M.Sc. research."
+        },
+        {
+          "id": "why",
+          "label": "/why-me",
+          "question": "why hire you?",
+          "response": "Because I've done this at enterprise scale. Not Kaggle notebooks — real endpoints serving real customers, with SLAs, monitoring and rollback plans when things go sideways. I think in business impact: an F1 score that doesn't move a revenue number is a metric I'll argue against. I can translate between your engineers, your data team and your stakeholders without losing any of them, and I stay in the work until the thing is actually running in production — not just demoed in a slide."
+        },
+        {
+          "id": "drive",
+          "label": "/drive",
+          "question": "what keeps you going?",
+          "response": "I'm ambitious — and I mean that in a specific way. I get genuinely excited when I can take a painful, repetitive process and automate it out of existence. The moment a data team stops babysitting a dashboard, or a model stops needing a human to push it through staging, that's the win I chase. Scale, impact and leverage — that's the combination that makes the long days worth it."
+        },
+        {
+          "id": "hobbies",
+          "label": "/hobbies",
+          "question": "what do you do outside code?",
+          "response": "Honestly? Music is always on — it's how I focus and how I decompress, same playlist running through a long training job or a gym session. Speaking of which, the gym is a few times a week; solving a hard ML problem and pushing a hard set have more in common than people think, both are about showing up when it'd be easier not to. And when I really unplug, it's movies and series — anything with a story worth getting lost in. None of this goes on a CV, but it's what makes the work sustainable."
+        },
+        {
+          "id": "availability",
+          "label": "/availability",
+          "question": "how do you work with clients?",
+          "response": "Flexible. I'm open to remote, hybrid or on-site — whatever makes the team faster. No hard limits on time zones or working hours either; if the project needs me to overlap with EU mornings or US afternoons, that's workable. My base is Bogotá, Colombia, so I sit comfortably between both sides of the Atlantic. I work in English or Spanish — pick whichever is easier for your team."
+        },
+        {
+          "id": "hire",
+          "label": "/hire",
+          "question": "let's work together.",
+          "response": "That's the right answer. Tell me about your project in the contact section below, or grab the CV for the long version. I reply within 24h — pick the channel that works for you.",
+          "cta": {
+            "primary": "Start a project",
+            "secondary": "Download CV"
+          }
+        }
+      ],
+      "meta": {
+        "tokens": "tokens",
+        "latency": "latency",
+        "temperature": "temp",
+        "typing": "generating"
+      }
+    }
+  },
+  "services": {
+    "label": "// services",
+    "title": "Four ways",
+    "titleAccent": "to collaborate.",
+    "subtitle": "Pick an engagement. See what goes in, what comes out, and how it runs.",
+    "hoverHint": "hover or click to preview",
+    "labels": {
+      "inputs": "Inputs",
+      "outputs": "Outputs",
+      "stages": "Stages",
+      "metrics": "Success metrics",
+      "useCases": "Use cases",
+      "cta": "Start this engagement",
+      "close": "close",
+      "expand": "expand"
+    },
+    "items": [
+      {
+        "id": "ml-dev",
+        "version": "v2.3",
+        "code": "ml_dev",
+        "backdrop": "loss",
+        "name": "ML Model Development",
+        "tagline": "From raw data to production model.",
+        "summary": "Custom ML / DL models designed, trained and tuned for your specific business problem — delivered with an inference API and docs, not just a notebook.",
+        "inputs": "Raw data · business KPI · constraints",
+        "outputs": "Trained model + inference API + docs",
+        "stages": ["explore", "feature-eng", "train", "evaluate", "export"],
+        "metrics": ["Accuracy", "AUC-ROC", "F1", "Business uplift"],
+        "useCases": ["Churn prediction", "Demand forecasting", "Recommender systems", "Computer vision"]
+      },
+      {
+        "id": "mlops",
+        "version": "v1.8",
+        "code": "mlops",
+        "backdrop": "pipeline",
+        "name": "MLOps & Deployment",
+        "tagline": "Ship it. Monitor it. Retrain it.",
+        "summary": "Bring models to production with CI/CD, versioning, monitoring and automated retraining. The boring 80% that separates a demo from a real product.",
+        "inputs": "Trained model · cloud account",
+        "outputs": "CI/CD pipeline · monitoring · registry",
+        "stages": ["package", "test", "deploy", "monitor", "retrain"],
+        "metrics": ["Deploy time", "Drift alerts", "Uptime"],
+        "useCases": ["MLflow setup", "Docker + K8s", "Azure ML / SageMaker", "Feature stores"]
+      },
+      {
+        "id": "data-eng",
+        "version": "v3.0",
+        "code": "data_eng",
+        "backdrop": "flow",
+        "name": "Data Pipelines",
+        "tagline": "Pipelines that don't break at 3am.",
+        "summary": "Scalable ETL/ELT pipelines that turn heterogeneous chaos into clean, queryable data — with tests, alerts, and documentation for the on-call you'll never have to page.",
+        "inputs": "Heterogeneous data sources",
+        "outputs": "Airflow/PySpark pipelines · warehouse",
+        "stages": ["ingest", "transform", "validate", "load"],
+        "metrics": ["Latency", "Throughput", "Data quality"],
+        "useCases": ["Streaming ingestion", "Feature engineering", "Delta Lake", "Data quality"]
+      },
+      {
+        "id": "ai-consulting",
+        "version": "v1.2",
+        "code": "consulting",
+        "backdrop": "network",
+        "name": "AI Consulting",
+        "tagline": "Strategy, not just slides.",
+        "summary": "Strategy, architecture reviews and team enablement for AI initiatives. I plug in, audit the state, and leave your team shipping.",
+        "inputs": "Roadmap · team · data",
+        "outputs": "Architecture + roadmap + playbooks",
+        "stages": ["audit", "roadmap", "enable", "review"],
+        "metrics": ["Time to first model", "Team velocity"],
+        "useCases": ["AI strategy", "Architecture audits", "Team training", "Vendor selection"]
+      }
+    ]
+  },
+  "stack": {
+    "label": "// stack",
+    "title": "Query the stack.",
+    "titleAccent": "Directly.",
+    "subtitle": "30 tools across 6 categories. Run a method below to inspect how I actually use them.",
+    "hint": "hover or tap a node",
+    "empty": "Hover or tap any node to explore how the graph connects.",
+    "categories": {
+      "lang": "Language",
+      "ml": "ML / Deep Learning",
+      "mlops": "MLOps",
+      "cloud": "Cloud",
+      "data": "Data",
+      "viz": "APIs & Viz"
+    },
+    "meta": {
+      "years": "yrs",
+      "connections": "connections",
+      "usedWith": "used with",
+      "proficiency": "proficiency"
+    },
+    "stats": {
+      "tools": "tools",
+      "edges": "connections",
+      "categories": "categories"
+    }
+  },
+  "experience": {
+    "label": "// experience",
+    "title": "Three releases.",
+    "titleAccent": "One upgrade path.",
+    "subtitle": "A career, changelog-style. Semver applies.",
+    "changelog": {
+      "packageName": "camilo-dev",
+      "metaLine": "semantic versioning · 3 releases",
+      "currentBanner": "currently running {{version}} in production · available for freelance",
+      "releaseTypeLabels": {
+        "major": "MAJOR",
+        "minor": "MINOR",
+        "patch": "PATCH"
+      },
+      "statusLabels": {
+        "rc": "rc",
+        "stable": "stable",
+        "initial": "initial"
+      },
+      "categoryLabels": {
+        "added": "Added",
+        "improved": "Improved",
+        "breaking": "Breaking",
+        "initial": "Initial release"
+      },
+      "copy": "copy",
+      "copied": "copied",
+      "current": "current"
+    },
+    "shell": {
+      "path": "~/camilo-career",
+      "branch": "main",
+      "command": "git log --graph --oneline --all --decorate",
+      "headRef": "HEAD → main",
+      "initialCommit": "career.init()",
+      "initialMessage": "Initial commit",
+      "statsPrefix": "stats"
+    },
+    "actions": {
+      "promote": "promote",
+      "init": "init"
+    },
+    "expand": "expand diff",
+    "collapse": "collapse",
+    "additions": "additions",
+    "files": "files changed",
+    "roles": [
+      {
+        "id": "ghitss-current",
+        "hash": "a7f3c21",
+        "date": "2025-05-04",
+        "action": "promote",
+        "position": "Mid Level Data Scientist",
+        "company": "Global Hitss — Claro / América Móvil",
+        "location": "Bogotá, Colombia",
+        "period": "May 2025 — Present",
+        "summary": "Designing and deploying ML models end-to-end, with a focus on MLOps lifecycle tooling and team-wide standards.",
+        "highlights": [
+          "Designed, trained and deployed ML models (XGBoost, LightGBM, Neural Networks) for classification, regression and clustering, achieving +25% on business metrics.",
+          "Built a proprietary Python framework for the ML lifecycle integrating MLflow, Docker and Azure DevOps, cutting model deployment time by 60%.",
+          "Implemented scalable data pipelines with PySpark and Apache Airflow, processing 10M+ records daily.",
+          "Led A/B testing and statistical validation for models in production using hypothesis testing and causal inference.",
+          "Automated hyperparameter tuning with Optuna and GridSearchCV, improving model performance (AUC-ROC, F1, RMSE) by 15%."
+        ]
+      },
+      {
+        "id": "ghitss-mid",
+        "hash": "b2e9d14",
+        "date": "2023-01-10",
+        "action": "promote",
+        "position": "Data Scientist / ML Engineer",
+        "company": "Global Hitss — Claro / América Móvil",
+        "location": "Bogotá, Colombia",
+        "period": "Jan 2023 — May 2025",
+        "summary": "End-to-end ML/AI solutions for enterprise automation and optimization.",
+        "highlights": [
+          "Developed churn, propensity and segmentation models with ensemble methods and deep learning, impacting 2M+ users.",
+          "Designed and trained neural networks (CNNs, RNNs, LSTMs) with TensorFlow and PyTorch for image classification and time-series forecasting.",
+          "Built GANs for synthetic data generation, augmenting training datasets by 300%.",
+          "Implemented RESTful APIs with FastAPI and Flask for real-time model serving, handling 50K+ requests/day.",
+          "Built robust ETL pipelines with Python, advanced SQL and PySpark across heterogeneous sources (SQL Server, PostgreSQL, MongoDB, REST APIs).",
+          "Versioned 100+ experiments with MLflow, guaranteeing reproducibility and traceability."
+        ]
+      },
+      {
+        "id": "claro-analyst",
+        "hash": "c8f1a05",
+        "date": "2022-01-05",
+        "action": "init",
+        "position": "Data Analyst / Junior Data Scientist",
+        "company": "Claro Colombia",
+        "location": "Bogotá, Colombia",
+        "period": "Jan 2022 — Jan 2023",
+        "summary": "Analytical solutions and predictive models for the HR area.",
+        "highlights": [
+          "Designed interactive dashboards in Power BI and Tableau wired to predictive models, improving data management efficiency by 40%.",
+          "Built ML models to predict employee turnover and performance using scikit-learn and XGBoost.",
+          "Automated data pipelines with Python and SQL, reducing processing time by 50% and eliminating manual errors.",
+          "Applied descriptive and inferential statistical analysis to produce actionable People Analytics insights.",
+          "Partnered with business stakeholders to translate requirements into scalable technical solutions."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "label": "// projects",
+    "title": "Four case studies.",
+    "titleAccent": "Shipped, not shelved.",
+    "subtitle": "End-to-end ML systems deployed in production, not notebooks. Numbers are measured, not estimated.",
+    "labels": {
+      "featured": "featured",
+      "stack": "stack",
+      "period": "period",
+      "metrics": "metrics",
+      "problem": "Problem",
+      "approach": "Approach",
+      "outcome": "Outcome"
+    },
+    "items": [
+      {
+        "id": "mlops-framework",
+        "number": "01",
+        "featured": true,
+        "name": "MLOps Framework",
+        "tagline": "Standardizing the ML lifecycle for 5+ teams.",
+        "period": "2024 — Present",
+        "summary": "Modular Python framework automating the ML lifecycle end-to-end. Unified multi-algorithm training interface, Bayesian hyperparameter optimization with Optuna, native MLflow integration with automatic logging and Model Registry, SHAP/LIME explainability for interpretation and governance.",
+        "caseStudy": {
+          "problem": "Every ML team was reinventing the same wheel — preprocessing, training loops, MLflow setup, deployment scripts. Time-to-production was painful and artifacts untraceable.",
+          "approach": "Designed a modular Python framework unifying preprocessing, multi-algorithm training, Bayesian hyperparameter optimization with Optuna, native MLflow integration with Model Registry, and SHAP/LIME explainability.",
+          "outcome": "Adopted by 5+ internal teams. Dev time cut 40%. MLOps best practices standardized with a single install. New models ship with versioning and explainability by default."
+        },
+        "metrics": [
+          { "value": "−40%", "label": "dev time" },
+          { "value": "5+", "label": "teams adopted" },
+          { "value": "multi", "label": "algo interface" }
+        ],
+        "stack": ["Python", "MLflow", "Optuna", "SHAP", "LIME", "Docker"]
+      },
+      {
+        "id": "mlops-standards",
+        "number": "02",
+        "featured": false,
+        "name": "MLOps Standards",
+        "tagline": "ML governance that scales.",
+        "period": "2023 — Present",
+        "summary": "Corporate ML lifecycle standard: reference architecture, repository structure, CI/CD pipelines and approval workflows for dev/staging/prod promotion. Governance with Model Registry, semantic versioning, cookiecutter templates, data & model drift monitoring with automated alerts.",
+        "caseStudy": {
+          "problem": "ML projects lacked a common operating model — different repos, different CI pipelines, no drift monitoring. Governance was retroactive and onboarding took weeks.",
+          "approach": "Defined a corporate lifecycle standard: reference architecture, cookiecutter repo templates, CI/CD with dev/staging/prod promotion, Model Registry versioning, data & model drift monitoring with automated alerts.",
+          "outcome": "100% adoption across new ML projects. Zero drift events unnoticed. Full data lineage enforced. Onboarding new Data Scientists went from weeks to days."
+        },
+        "metrics": [
+          { "value": "100%", "label": "new-project adoption" },
+          { "value": "3", "label": "environments" },
+          { "value": "0", "label": "drift misses" }
+        ],
+        "stack": ["MLflow", "Azure DevOps", "cookiecutter", "CI/CD"]
+      },
+      {
+        "id": "time-series",
+        "number": "03",
+        "featured": false,
+        "name": "Time Series Predictive System",
+        "tagline": "Forecasting that listens.",
+        "period": "2023 — 2024",
+        "summary": "Ensemble of ARIMA, Prophet, LSTMs and Temporal Fusion Transformers for demand forecasting. Anomaly detection layer with Isolation Forest and Autoencoders. Automated inference pipeline with periodic predictions and real-time deviation alerts.",
+        "caseStudy": {
+          "problem": "Business forecasts were running at 30% MAPE — acceptable for manual planning, useless for automated decisions. Classical methods could not capture seasonality shifts or external shocks.",
+          "approach": "Ensembled ARIMA, Prophet, LSTMs and Temporal Fusion Transformers. Added an anomaly detection layer with Isolation Forest and Autoencoders. Deployed automated inference with periodic predictions and real-time alerts.",
+          "outcome": "MAPE dropped 30% vs. traditional methods. Anomalies flagged before they hit revenue. Forecasts now drive supply planning, inventory and marketing spend allocation."
+        },
+        "metrics": [
+          { "value": "−30%", "label": "MAPE reduction" },
+          { "value": "4", "label": "ensembled models" },
+          { "value": "real-time", "label": "alerts" }
+        ],
+        "stack": ["Python", "TensorFlow", "PyTorch", "Prophet", "ARIMA", "Airflow"]
+      },
+      {
+        "id": "scoring-platform",
+        "number": "04",
+        "featured": false,
+        "name": "Predictive Scoring Platform",
+        "tagline": "100K+ daily decisions, automated.",
+        "period": "2023 — 2024",
+        "summary": "End-to-end credit scoring and propensity system. Ensemble (XGBoost, LightGBM, Logistic Regression), dynamic segmentation (K-Means, DBSCAN), centralized Feature Store for training/inference consistency, FastAPI scoring API under 200ms, SHAP values for regulatory compliance, event-driven Kafka integration.",
+        "caseStudy": {
+          "problem": "Credit decisioning was manual — slow, inconsistent, regulatory risk. Each decision took hours and conversion suffered from lag between opportunity and response.",
+          "approach": "Built end-to-end scoring ensemble (XGBoost, LightGBM, Logistic Regression) with dynamic segmentation (K-Means, DBSCAN). Centralized Feature Store. FastAPI scoring under 200ms. SHAP values for compliance. Kafka event-driven triggers.",
+          "outcome": "100K+ automated decisions daily. Campaign conversion up 35%, default rate down 20%. Every decision explainable and auditable. Regulatory approval secured on first review."
+        },
+        "metrics": [
+          { "value": "+35%", "label": "campaign conversion" },
+          { "value": "−20%", "label": "default rate" },
+          { "value": "<200ms", "label": "p99 latency" }
+        ],
+        "stack": ["XGBoost", "LightGBM", "FastAPI", "Kafka", "SHAP", "Feature Store"]
+      }
+    ]
+  },
+  "education": {
+    "label": "// education",
+    "title": "Credentials,",
+    "titleAccent": "briefly.",
+    "subtitle": "Formal education and continuous learning — the foundation behind the work.",
+    "degreesLabel": "formal education",
+    "certsLabel": "certifications",
+    "statusInProgress": "in progress",
+    "statusComplete": "complete",
+    "degrees": [
+      {
+        "id": "msc-ai",
+        "degree": "M.Sc. in Applied Mathematics & Computer Science — AI",
+        "institution": "Universidad del Rosario",
+        "location": "Bogotá, Colombia",
+        "period": "2024 — Present",
+        "status": "in-progress",
+        "specialization": "Specialization in Machine Learning, Computational Statistics, Optimization, and Advanced Numerical Methods."
+      },
+      {
+        "id": "ba-business",
+        "degree": "B.A. in Business Administration",
+        "institution": "Corporación Universitaria Minuto de Dios (UNIMINUTO)",
+        "location": "Bogotá, Colombia",
+        "period": "2018 — 2023",
+        "status": "complete",
+        "specialization": "Training in business management, financial analysis, and data-driven decision making."
+      }
+    ],
+    "certs": [
+      {
+        "id": "stanford-ml",
+        "title": "Machine Learning Specialization",
+        "institution": "Stanford · Coursera",
+        "note": "Andrew Ng"
+      },
+      {
+        "id": "dl-ai-dl",
+        "title": "Deep Learning Specialization",
+        "institution": "DeepLearning.AI · Coursera"
+      },
+      {
+        "id": "dl-ai-mlops",
+        "title": "MLOps Specialization",
+        "institution": "DeepLearning.AI · Coursera",
+        "note": "ML Engineering for Production"
+      },
+      {
+        "id": "ibm-ds",
+        "title": "Data Science Professional Certificate",
+        "institution": "IBM · Coursera"
+      },
+      {
+        "id": "umich-ds",
+        "title": "Applied Data Science with Python",
+        "institution": "U. Michigan · Coursera"
+      },
+      {
+        "id": "ucd-sql",
+        "title": "SQL for Data Science",
+        "institution": "UC Davis · Coursera"
+      },
+      {
+        "id": "udemy-spark",
+        "title": "Apache Spark & Python for Big Data",
+        "institution": "Udemy"
+      },
+      {
+        "id": "udemy-stats",
+        "title": "Statistics for Data Science & Business Analysis",
+        "institution": "Udemy"
+      },
+      {
+        "id": "datacamp-de",
+        "title": "Data Engineering with Python",
+        "institution": "DataCamp Professional"
+      }
+    ]
+  },
+  "contact": {
+    "label": "// contact",
+    "title": "Let's build something.",
+    "titleAccent": "Or just say hello.",
+    "subtitle": "Drop the essentials below. I reply within 24h — usually faster. Or pick any of the direct channels underneath.",
+    "form": {
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "budgetLabel": "Budget",
+      "messageLabel": "Message",
+      "namePlaceholder": "What should I call you?",
+      "emailPlaceholder": "Where can I reach you?",
+      "messagePlaceholder": "Tell me about your project — timeline, constraints, what success looks like.",
+      "send": "Send message",
+      "sending": "Sending…",
+      "successTitle": "Thanks, {{name}}.",
+      "successBody": "Got it. I'll reply within 24h — check your inbox for a confirmation shortly.",
+      "sendAnother": "send another",
+      "required": "required",
+      "invalidEmail": "invalid",
+      "errorLabel": "failed to send"
+    },
+    "budgetOptions": ["< $5k", "$5k – $15k", "$15k – $50k", "$50k+", "let's talk"],
+    "direct": {
+      "heading": "or, directly",
+      "emailLabel": "Email",
+      "emailValue": "acevedo8022013@gmail.com",
+      "callLabel": "Call",
+      "callValue": "30 min via Google Meet",
+      "linkedinLabel": "LinkedIn",
+      "linkedinValue": "in/bryam-camilo-acevedo",
+      "cvLabel": "CV",
+      "cvValue": "bryam-camilo-acevedo.pdf",
+      "copy": "copy",
+      "copied": "copied",
+      "book": "book",
+      "open": "open",
+      "download": "download"
+    }
+  },
+  "footer": {
+    "label": "// footer",
+    "cta": "Still here?",
+    "ctaAccent": "Let's build.",
+    "backToTop": "back to top",
+    "tagline": "Designed and built with too much coffee in Bogotá.",
+    "rights": "© {{year}} Bryam Camilo Acevedo · All rights reserved.",
+    "versionLabel": "v1.0.0",
+    "buildLabel": "built {{date}}",
+    "socials": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email",
+      "cv": "CV"
+    }
+  }
+}
