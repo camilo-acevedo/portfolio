@@ -51,11 +51,37 @@ interface ReleaseData {
 }
 
 const RELEASE_DATA: Record<string, ReleaseData> = {
-  'ghitss-current': {
-    version: '3.0.0-rc',
+  'ghitss-specialist': {
+    version: '4.0.0-rc',
     releaseType: 'major',
     status: 'rc',
     isCurrent: true,
+    categories: [
+      {
+        type: 'added',
+        items: [
+          { kind: 'ref', refIdx: 0 },
+          { kind: 'ref', refIdx: 1 },
+          { kind: 'ref', refIdx: 3 },
+          { kind: 'ref', refIdx: 4 },
+        ],
+      },
+      {
+        type: 'improved',
+        items: [
+          { kind: 'metric', metricKey: 'release_lead_time', delta: '−70%' },
+          { kind: 'metric', metricKey: 'drift_coverage', delta: '100%' },
+          { kind: 'metric', metricKey: 'cloud_cost', delta: '−35%' },
+          { kind: 'metric', metricKey: 'deploy_strategy', delta: 'Canary' },
+        ],
+      },
+    ],
+  },
+  'ghitss-current': {
+    version: '3.0.0',
+    releaseType: 'major',
+    status: 'stable',
+    isCurrent: false,
     categories: [
       {
         type: 'added',
