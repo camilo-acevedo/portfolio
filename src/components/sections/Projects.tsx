@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { Plus } from 'lucide-react';
+import { Github, Plus, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { DecryptText } from '@/components/fx/DecryptText';
@@ -26,6 +26,7 @@ interface Project {
   tagline: string;
   period: string;
   summary: string;
+  repo: string;
   caseStudy: CaseStudyContent;
   metrics: Metric[];
   stack: string[];
@@ -33,10 +34,26 @@ interface Project {
 
 type ColumnKey = 'problem' | 'approach' | 'outcome';
 
+interface RoadmapItem {
+  name: string;
+  tagline: string;
+  status: string;
+  tags: string[];
+}
+
+interface RoadmapContent {
+  label: string;
+  title: string;
+  titleAccent: string;
+  note: string;
+  items: RoadmapItem[];
+}
+
 export function Projects() {
   const { t } = useTranslation();
   const items = t('projects.items', { returnObjects: true }) as Project[];
   const labels = t('projects.labels', { returnObjects: true }) as Record<string, string>;
+  const roadmap = t('projects.roadmap', { returnObjects: true }) as RoadmapContent;
   const [openId, setOpenId] = useState<string>(items[0]?.id ?? '');
 
   return (
@@ -90,8 +107,101 @@ export function Projects() {
             />
           ))}
         </ul>
+
+        <Roadmap roadmap={roadmap} />
       </div>
     </section>
+  );
+}
+
+function Roadmap({ roadmap }: { roadmap: RoadmapContent }) {
+  if (!roadmap?.items?.length) return null;
+
+  return (
+    <div className="mt-24 md:mt-32">
+      <div className="mb-10 flex flex-col items-start gap-4 md:mb-12">
+        <motion.span
+          initial={{ opacity: 0, y: 6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-fg-subtle"
+        >
+          <Sparkles size={13} strokeWidth={1.5} className="text-accent" />
+          {roadmap.label}
+        </motion.span>
+        <motion.h3
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
+          className="font-serif text-3xl leading-[1.05] tracking-tight sm:text-4xl md:text-5xl text-balance"
+        >
+          {roadmap.title}{' '}
+          <span className="gradient-text italic">{roadmap.titleAccent}</span>
+        </motion.h3>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6, delay: 0.2, ease: EASE }}
+          className="max-w-xl text-sm text-fg-muted md:text-base"
+        >
+          {roadmap.note}
+        </motion.p>
+      </div>
+
+      <ul className="grid gap-4 sm:grid-cols-2 md:gap-5">
+        {roadmap.items.map((item, i) => (
+          <RoadmapCard key={item.name} item={item} index={i} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function RoadmapCard({ item, index }: { item: RoadmapItem; index: number }) {
+  return (
+    <motion.li
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.7, delay: 0.1 + index * 0.08, ease: EASE }}
+      className="group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-dashed border-border-strong/70 bg-bg-elevated/30 p-6 transition-colors hover:border-accent/40 md:p-7"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/[0.03] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+      />
+
+      <div className="relative flex items-start justify-between gap-3">
+        <span className="font-serif text-xl tracking-tight text-fg md:text-2xl">
+          {item.name}
+        </span>
+        <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-accent/10 px-2.5 py-1 font-mono text-[9.5px] uppercase tracking-[0.18em] text-accent ring-1 ring-inset ring-accent/30">
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="absolute inset-0 animate-ping rounded-full bg-accent opacity-60" />
+            <span className="relative h-1.5 w-1.5 rounded-full bg-accent" />
+          </span>
+          {item.status}
+        </span>
+      </div>
+
+      <p className="relative text-[14px] leading-relaxed text-fg-muted">
+        {item.tagline}
+      </p>
+
+      <div className="relative mt-auto flex flex-wrap gap-1.5 pt-1">
+        {item.tags.map((tag) => (
+          <span
+            key={tag}
+            className="rounded-md bg-bg-muted/60 px-2 py-0.5 font-mono text-[10.5px] text-fg-subtle"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+    </motion.li>
   );
 }
 
@@ -298,6 +408,22 @@ function ProjectBody({
           ))}
         </span>
       </motion.div>
+
+      <motion.a
+        href={project.repo}
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ opacity: 0, y: 6 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.55, delay: 0.9, ease: EASE }}
+        className="group/repo mt-7 inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-fg-subtle transition-colors hover:border-accent/50 hover:text-accent"
+      >
+        <Github size={14} strokeWidth={1.5} />
+        {labels.viewSource}
+        <span aria-hidden className="transition-transform group-hover/repo:translate-x-0.5">
+          ↗
+        </span>
+      </motion.a>
     </div>
   );
 }

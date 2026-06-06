@@ -2,7 +2,7 @@
 
 # camiloacevedo.dev
 
-**The freelance portfolio of [Camilo Acevedo](https://camiloacevedo.dev) — Mid Level Data Scientist & ML Engineer.**
+**The freelance portfolio of [Camilo Acevedo](https://camiloacevedo.dev) — Machine Learning Specialist & MLOps Engineer.**
 Editorial design, full-stack contact form, EN / ES, dark / light, dockerized backend.
 
 [![status](https://img.shields.io/badge/status-live-success?style=flat-square)](https://camiloacevedo.dev)
